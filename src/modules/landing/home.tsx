@@ -7,49 +7,10 @@ import { LandingNavbar } from "@components/landing/landingNavbar";
 export function Home() {
   const mainEpisode = {
     title: "Arquitectura móvil en 2025: patrones, nube y escalabilidad",
-    src: `${import.meta.env.BASE_URL}public/audio/episodio.mp3`,
+    src: `${import.meta.env.BASE_URL}audio/episodio.mp3`,
     description:
       "Un recorrido práctico por los modelos arquitectónicos (MVC, MVP, MVVM, Clean Architecture), integración con la nube, almacenamiento local con sync, microservicios y retos con IA, IoT y AR.",
   };
-
-  const stories = [
-    {
-      id: 1,
-      title:
-        "Modelos arquitectónicos comunes: MVC, MVP, MVVM y Clean Architecture",
-      description:
-        "Cuándo usar cada patrón, separación de responsabilidades y ejemplos en apps reales.",
-      status: "No disponible",
-    },
-    {
-      id: 2,
-      title: "Integración con servicios en la nube",
-      description:
-        "Autenticación, funciones serverless, APIs y despliegues con proveedores populares.",
-      status: "No disponible",
-    },
-    {
-      id: 3,
-      title: "Almacenamiento local y sincronización con la nube",
-      description:
-        "Estrategias offline-first, conflictos de sincronización y cifrado en reposo/en tránsito.",
-      status: "No disponible",
-    },
-    {
-      id: 4,
-      title: "Escalabilidad y microservicios en apps móviles modernas",
-      description:
-        "Diseño de backend para crecimiento, observabilidad y límites de servicio.",
-      status: "No disponible",
-    },
-    {
-      id: 5,
-      title: "Retos arquitectónicos con IA, IoT y realidad aumentada",
-      description:
-        "Patrones para inferencia on-device, telemetría de dispositivos y experiencias inmersivas.",
-      status: "No disponible",
-    },
-  ];
 
   return (
     <>
@@ -76,7 +37,6 @@ export function Home() {
                 y la realidad aumentada.
               </p>
 
-              {/* 🎧 Reproductor principal */}
               <div className="max-w-2xl mx-auto mb-8">
                 <GlassCard>
                   <div className="text-left">
@@ -112,60 +72,6 @@ export function Home() {
                   </div>
                 </GlassCard>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Episodios */}
-        <section className="relative py-20 bg-gradient-to-b from-transparent to-slate-100/50 dark:to-slate-800/50">
-          <BackgroundElements />
-
-          <div className="container mx-auto max-w-7xl px-6 relative z-10">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-6">
-                <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent">
-                  Episodios recientes
-                </span>
-              </h2>
-              <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto font-light leading-relaxed">
-                Explora los episodios y profundiza en las decisiones
-                arquitectónicas que marcan la diferencia en apps móviles
-                modernas. No hay ninguno realmente.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-              {stories.map((story) => (
-                <GlassCard key={story.id} className="h-full">
-                  <div className="flex flex-col h-full">
-                    <div className="flex justify-between items-start mb-4">
-                      <h3 className="text-xl font-bold text-slate-900 dark:text-white">
-                        {story.title}
-                      </h3>
-                      <span
-                        className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                          story.status === "Disponible"
-                            ? "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400"
-                            : "bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-400"
-                        }`}
-                      >
-                        {story.status}
-                      </span>
-                    </div>
-
-                    <p className="text-slate-600 dark:text-slate-400 mb-6 flex-grow leading-relaxed">
-                      {story.description}
-                    </p>
-
-                    <Button
-                      className="w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white font-medium transition-all duration-300"
-                      size="sm"
-                    >
-                      Escuchar episodio
-                    </Button>
-                  </div>
-                </GlassCard>
-              ))}
             </div>
           </div>
         </section>

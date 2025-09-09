@@ -8,19 +8,11 @@ export const siteConfig = {
       label: "",
       href: "/",
     },
-    {
-      label: "Historias",
-      href: "/stories",
-    },
   ],
   navMenuItems: [
     {
       label: "",
       href: "/",
-    },
-    {
-      label: "Historias",
-      href: "/stories",
     },
   ],
   links: {
