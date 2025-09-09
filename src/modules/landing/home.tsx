@@ -1,33 +1,17 @@
+import { animationStyles } from "@styles/animationStyles";
 import { BackgroundElements } from "@components/landing/backgroundElements";
 import { Button, Link } from "@heroui/react";
 import { GlassCard } from "@components/landing/glassCard";
 import { LandingNavbar } from "@components/landing/landingNavbar";
-import { useEffect, useState } from "react";
-import { animationStyles } from "@styles/animationStyles";
 
 export function Home() {
-  const [isVisible, setIsVisible] = useState(true);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIsVisible(false);
-      setTimeout(() => {
-        setIsVisible(true);
-      }, 300);
-    }, 2500);
-    return () => clearInterval(interval);
-  }, []);
-
-  // 🔊 Archivo de audio principal alojado en la página
-  // Reemplaza la ruta por la ubicación real del MP3 en tu proyecto (por ejemplo, /public/audio/episodio-01.mp3)
   const mainEpisode = {
     title: "Arquitectura móvil en 2025: patrones, nube y escalabilidad",
-    src: "/public/assets/audio/audio.mp3",
+    src: `${import.meta.env.BASE_URL}public/audio/episodio.mp3`,
     description:
       "Un recorrido práctico por los modelos arquitectónicos (MVC, MVP, MVVM, Clean Architecture), integración con la nube, almacenamiento local con sync, microservicios y retos con IA, IoT y AR.",
   };
 
-  // Mantengo el nombre "stories" para no cambiar la estructura de componentes/JSX
   const stories = [
     {
       id: 1,
@@ -35,40 +19,35 @@ export function Home() {
         "Modelos arquitectónicos comunes: MVC, MVP, MVVM y Clean Architecture",
       description:
         "Cuándo usar cada patrón, separación de responsabilidades y ejemplos en apps reales.",
-      participants: 42, // métrica simbólica, no se muestra
-      status: "Disponible",
+      status: "No disponible",
     },
     {
       id: 2,
       title: "Integración con servicios en la nube",
       description:
         "Autenticación, funciones serverless, APIs y despliegues con proveedores populares.",
-      participants: 35,
-      status: "Disponible",
+      status: "No disponible",
     },
     {
       id: 3,
       title: "Almacenamiento local y sincronización con la nube",
       description:
         "Estrategias offline-first, conflictos de sincronización y cifrado en reposo/en tránsito.",
-      participants: 51,
-      status: "Disponible",
+      status: "No disponible",
     },
     {
       id: 4,
       title: "Escalabilidad y microservicios en apps móviles modernas",
       description:
         "Diseño de backend para crecimiento, observabilidad y límites de servicio.",
-      participants: 29,
-      status: "Disponible",
+      status: "No disponible",
     },
     {
       id: 5,
       title: "Retos arquitectónicos con IA, IoT y realidad aumentada",
       description:
         "Patrones para inferencia on-device, telemetría de dispositivos y experiencias inmersivas.",
-      participants: 33,
-      status: "Disponible",
+      status: "No disponible",
     },
   ];
 
@@ -88,18 +67,6 @@ export function Home() {
                     Programines Podcast
                   </span>
                 </h1>
-              </div>
-
-              <div className="mb-2">
-                <div
-                  className={`text-2xl md:text-3xl lg:text-4xl font-semibold transition-all duration-500 text-slate-700 dark:text-slate-300 ${
-                    isVisible
-                      ? "opacity-100 transform translate-y-0 scale-100"
-                      : "opacity-0 transform translate-y-8 scale-95"
-                  }`}
-                >
-                  Arquitectura móvil sin rodeos
-                </div>
               </div>
 
               <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-8 leading-relaxed font-light">
@@ -163,11 +130,10 @@ export function Home() {
               <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto font-light leading-relaxed">
                 Explora los episodios y profundiza en las decisiones
                 arquitectónicas que marcan la diferencia en apps móviles
-                modernas.
+                modernas. No hay ninguno realmente.
               </p>
             </div>
 
-            {/* Grid de tarjetas de episodios (reutiliza GlassCard) */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
               {stories.map((story) => (
                 <GlassCard key={story.id} className="h-full">
@@ -209,23 +175,8 @@ export function Home() {
           <div className="container mx-auto max-w-7xl px-6 py-12">
             <div className="text-center">
               <p className="text-slate-600 dark:text-slate-400 mb-6 max-w-md mx-auto">
-                Enlaces adicionales
+                Enlaces adicionales - No hay ninguno en realidad
               </p>
-
-              <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm">
-                <Link
-                  className="text-slate-500 hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400 transition-colors"
-                  href="#"
-                >
-                  Aviso de privacidad
-                </Link>
-                <Link
-                  className="text-slate-500 hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400 transition-colors"
-                  href="#"
-                >
-                  Términos de uso
-                </Link>
-              </div>
 
               <div className="flex justify-center items-center gap-3">
                 <span className="text-slate-500 dark:text-slate-400 text-sm">
